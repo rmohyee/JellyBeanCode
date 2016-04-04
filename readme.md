@@ -1,6 +1,15 @@
 Jelly Bean Code
 ========
 
+Hey, Professor Slaybaugh!
+
+My Jelly Bean Estimator Homework is the file named HW5_InternalTesting_EstNumJellyBeans.
+For the imputs that make the tests run, You can check EstimatorTrialInputs. 
+
+Raana M.
+
+
+========
 The Jelly Bean Code was originally created as a Software Carpentry
 Instructor final project. 
 
