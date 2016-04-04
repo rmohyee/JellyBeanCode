@@ -32,8 +32,10 @@ class NumJellyEstimator:
 
         # Check that the value is between zero and one.
         if ((frac <= 0.0) or (frac >= 1.0)):
-            print ("Error: Fraction of land used for sugar must be between 0.0 and 1.0.")
-		sys.exit()
+            print "\nError: Fraction of land used for sugar must be between"\
+		  +" 0.0 and 1.0.\n"
+	    sys.exit()
+	
 
         # Store the fraction.
         self.fracLand4Sugar = frac
@@ -59,11 +61,11 @@ class NumJellyEstimator:
 
         # NE24: Add a test for type here
 		assert type(frac)==float, \
-			"Error: fraction of land set must be a float."
+			"Error: fraction of population set must be a float."
 
         # NE24: Add a test for value here
 		assert frac>=0 and frac<=1,
-			"Error: fraction of land must be greater than 0, and less than or equal to 1."
+			"Error: fraction of population must be greater than 0, and less than or equal to 1."
 
         # Store the fraction.
         self.fracPplLovingPink = frac
@@ -83,8 +85,8 @@ class NumJellyEstimator:
         n = self.fracLand4Sugar * self.worldPop * self.scalingConst
         # If this value is zero, it means that some value didn't get set.
         if (n == 0.0):
-            print ("\nError: fraction of land for sugar and world population"\
-                  +"must be set before computing estimate.\n")
+            print "\nError: fraction of land for sugar and world population"\
+                  +"must be set before computing estimate.\n"
         return int(n)
 
 
@@ -95,17 +97,17 @@ class NumJellyEstimator:
             (1.0 - self.fracPplLovingPink)
         # If this value is zero, it means that some value didn't get set.
         if (n == 0.0):
-            print ("\nError: fraction of land for sugar, world population, and"\
+            print "\nError: fraction of land for sugar, world population, and"\
                   +"fraction of people loving pink must be set before "\
-                  +"computing estimate.\n")
+                  +"computing estimate.\n"
 
         # NE24: What other checks might be useful? What is a better way to do this?
 		
-		#My Answer: Now we need to make sure that the denominator of compute_Njelly_est does not equal 0.
-		#So I could set the assert value test for that variable to disallow the variable to be set as 1.0,
-		#but I think it would be better to put in an exception test for when fracPplLovingPink=1 when defining 
-		#compute_Njelly_est to allow for the theoretical possibility that the entire population loves pink,
-		#which is a legitimate possibility even if it messes up our math in these calculations.
+	#My Answer: Now we need to make sure that the denominator of compute_Njelly_est does not equal 0.
+	#So I could set the assert value test for that variable to disallow the variable to be set as 1.0,
+	#but I think it would be better to put in an exception test for when fracPplLovingPink=1 when defining 
+	#compute_Njelly_est to allow for the theoretical possibility that the entire population loves pink,
+	#which is a legitimate possibility even if it messes up our math in these calculations.
 
         return int(n)
 
