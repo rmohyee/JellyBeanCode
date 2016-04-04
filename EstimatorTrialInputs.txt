@@ -1,0 +1,34 @@
+Raana Mohyee
+
+Prof. Rachel Slaybaugh
+
+NE24 Seminar
+
+4 April 2016
+
+
+
+Jelly Bean Estimator Inputs
+
+
+
+To make sure the first test I wrote is working:
+	
+set_world_pop(7 billion) --> should produce error message because not an integer.
+ correct would be set_world_pop(7000000000) --> no error message
+
+
+
+To make sure second test I wrote works:
+	
+set_world_pop(-40000) --> should produce error message because 
+number of people cannot be a negative value.
+
+
+
+To make sure third test I wrote works:
+	
+set_frac_ppl_loving_pink(67%) --> should produce error message because fraction of people who love pink should be a float
+
+To make sure fourth test I wrote works:
+set_frac_pppl_loving_pink(67.0) --> should produce error message because fraction of people who love pink should be between 0.0 and 1.0.
